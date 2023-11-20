@@ -1,0 +1,316 @@
+:root{
+	--fuenteHeading: 'PT Sans', sans-serif;
+	--fuenteParrafos: 'Open Sans', sans-serif;
+
+	--marron: #784D3C;
+	--blanco: #ffffff;
+	--negro: #000000;
+	--gris: #e1e1e1;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*PARA LOS REM, VA SIEMPRE*/
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+	font-family: var(--fuenteParrafos);
+	font-size: 1.6rem;
+	line-height: 2;/*EN LOS BLOGS EL INTERLINEADO SUELE SER MAYOR*/	
+}
+
+/**GLOBALES**/
+
+.contenedor{
+	/*max-width: 120rem;
+	width: 90%;*//*PARA QUE EL TEXTO EN LAS IMAGENES NO SE VAYA AL COSTADO DE LA PANTALLA Y TOME TODO*/
+	width:min(90%, 120rem);/*LO MISMO PERO CON MIN*/
+	margin: 0 auto;
+}
+
+a{
+	text-decoration: none;
+}
+
+h1,h2,h3,h4{
+	font-family: var(--fuenteHeading);
+	line-height: 1.2;/*PARA QUE NOSEA TAN GRANDE EL INTERLINEADO DE LOS HEADING*/
+}
+
+h1{
+	font-size: 4.8rem;
+}
+
+h2{
+	font-size: 4rem;
+}
+
+h3{
+	font-size: 3.2rem;
+}
+
+h4{
+	font-size: 2.8rem;
+}
+
+img{
+	max-width: 100%;
+}
+
+/**UTILIDADES**/
+.no-margin{
+	margin: 0;
+}
+
+.no-padding{
+	padding: 0;
+}
+
+.centrar-texto{
+	text-align: center;
+}
+
+/**HEADER**/
+.webp .header{
+	background-image: url(../img/banner.webp);
+
+}
+
+.no-webp .header{
+	background-image: url(../img/banner.jpg);
+}
+.header{
+	height: 60rem;/*PARA QUE APAREZCA LA IMAGEN*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+}
+
+.header__texto{
+	color: var(--blanco);
+	text-align: center;
+	margin-top: 6rem;
+}
+
+@media(min-width: 768px){
+	.header__texto{
+		margin-top: 20rem;
+	}
+}
+
+.barra{
+	padding-top: 3rem;
+}
+
+@media(min-width: 768px){
+	.barra{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.logo{
+	color: var(--blanco);
+}
+
+.logo__nombre{
+	font-weight: normal;
+}
+
+.logo__bold{
+	font-weight: bold;
+}
+
+@media(min-width: 768px){
+	.navegacion{
+		display: flex;
+		gap: 2rem;
+	}
+}
+
+.navegacion__enlace{
+	display: block;
+	text-align: center;
+	font-size: 1.8rem;
+	color: var(--blanco);
+}
+
+/**MAIN INDEX**/
+
+@media(min-width: 768px){
+	.contenido-principal{
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		column-gap: 4rem;
+	}
+}
+
+.entrada{
+	border-bottom: 1px solid var(--gris);
+	margin-bottom: 2rem;
+}
+
+
+.entrada:last-of-type{/*PARA QUITARLE EL BORDER INFERIOR A LA ULTIMA ENTRADA*/
+	border: none;
+	margin-bottom: 0;
+}
+
+.boton{
+	display: block;
+	font-family: var(--fuenteHeading);
+	color: var(--blanco);
+	text-align: center;
+	padding: 1rem 3rem;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	border: none;
+	cursor: pointer;
+}
+
+@media(min-width: 768px){
+	.boton{
+		display: inline-block;
+	}
+}
+
+.boton--primario{
+	background-color: var(--negro);
+}
+
+.boton--secundario{
+	background-color: var(--marron);
+}
+
+.cursos{
+	list-style: none;
+}
+
+.widget-curso{
+	border-bottom: 1px solid var(--gris);
+	margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{
+	border: none;
+	margin-bottom: 0;
+}
+
+
+.widget-curso__label,
+.curso__label{
+	font-family: var(--fuenteHeading);
+	font-weight: bold;
+}
+
+.widget-curso__info,/**IMPORTANTE SEPARAR SIEMPRE CON COMAS**/
+.curso__info{
+	font-weight: normal;
+}
+
+.widget-curso__label,
+.widget-curso__info,
+.curso__label,
+.curso__info{
+	font-size: 2rem;
+}
+
+/**FOOTER**/
+
+.footer{
+	background-color: var(--negro);
+	padding-bottom: 3rem;
+	margin-top: 4rem;
+}
+
+/**PAGINA NOSOTROS**/
+
+@media(min-width: 768px){
+	.sobre-nosotros{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2rem;
+	}
+
+}
+.sobre-nosotros__imagen{
+	margin-block-start: 1.5em;
+}
+
+.sobre-nosotros__texto{
+	margin-block-start:0;
+}
+
+/**PAGINA CURSOS**/
+
+
+.curso{
+	padding: 3rem 0;
+	border-bottom: 1px solid var(--gris);
+}
+
+@media(min-width: 768px){
+	.curso{/*APLICA A LOS TRES CURSOS Y SUS RESPECTIVOS DIV*/
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		column-gap: 3rem;
+	}
+}
+
+.curso:last-of-type{
+	border: none;
+	margin-bottom: 0;
+
+ }
+
+ /**PAGINA CONTACTO**/
+
+
+.contacto-bg{
+	background-image:url(../img/contacto.jpg);
+	height: 40rem;/**AL SER UN DIV VACIO HAY QUE AGREGARLE ALTURA PARA QUE EL BACKGROUND SEA UNA IMAGEN**/
+	background-size: cover;
+}
+
+.formulario{
+	background-color: var(--blanco);
+	margin: -5rem auto 0 auto;/*ASI EN NEGATIVO DIGO QUE BAJA 50PX HACIA ARRIBA, LUEGO DER ABJ IZQ*/
+	width: 95%;
+	padding: 5rem;
+}
+
+.campo{
+	display: flex;
+	margin-bottom: 2rem;
+}
+
+.campo__label{
+	flex:0 0 9rem;
+}
+
+.campo__field{
+	flex: 1;
+	border: 1px solid var(--gris);
+	overflow: auto;/*IMPORTANTE, PARA QUE EL INPUT SE ADAPTE A LAS RESOLUCIONES MAS PEQUELÑAS**/
+}
+
+.campo__field--textarea{
+
+	height: 20rem;
+	resize: none;/*PARA ELIMINAR EL EFDECTO DE AGRANDAR DEL TEXTAREA**/
+}
+
+@media(max-width: 768px) { /*PARA QUE EL BOTON OCUPE TODO EL ESPACIO EN RESOLUCIONES CHICAS*/
+		.btn {         
+			width: 100%;     
+		} 
+}
+
+
